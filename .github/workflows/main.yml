@@ -46,7 +46,7 @@ jobs:
           steps: ${{ toJson(steps) }}
           channel: "#git_action_notification"
           message: Integration {{ env.GITHUB_REF_NAME }} branch Successfully
-        if: always()
+          if: always()
 
   my_cd_pipeline:
     runs-on: ubuntu-latest
@@ -79,4 +79,4 @@ jobs:
           steps: ${{ toJson(steps) }}
           channel: "#git_action_notification"
           message: Deployed {{ env.GITHUB_REF_NAME }} branch Successfully
-        if: always()
+          if: always()
