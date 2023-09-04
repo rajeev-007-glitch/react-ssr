@@ -45,8 +45,8 @@ jobs:
           status: ${{ job.status }}
           steps: ${{ toJson(steps) }}
           channel: "#git_action_notification"
-          message: Integration {{ env.GITHUB_REF_NAME }} branch Successfully
-          if: always()
+          slack-message: Integration {{ env.GITHUB_REF_NAME }} branch Successfully
+        if: always()
 
   my_cd_pipeline:
     runs-on: ubuntu-latest
@@ -78,5 +78,5 @@ jobs:
           status: ${{ job.status }}
           steps: ${{ toJson(steps) }}
           channel: "#git_action_notification"
-          message: Deployed {{ env.GITHUB_REF_NAME }} branch Successfully
-          if: always()
+          slack-message: Deployed {{ env.GITHUB_REF_NAME }} branch Successfully
+        if: always()
