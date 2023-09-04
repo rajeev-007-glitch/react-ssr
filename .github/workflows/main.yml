@@ -11,7 +11,7 @@ env:
   SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
   EB_PACKAGE_S3_BUCKET_NAME: "devops-cicd-assignment-0409"
   EB_APPLICATION_NAME: "Node-js"
-  EB_ENVIRONMENT_NAME: "Nodejs-env-1"
+  EB_ENVIRONMENT_NAME: "Node-js-env"
   DEPLOY_PACKAGE_NAME: "nodejs-app-${{ github.sha }}.zip"
   AWS_REGION_NAME: "ap-northeast-1"
 on:
