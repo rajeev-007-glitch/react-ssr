@@ -1,11 +1,5 @@
-#---------------------------------------------------------------------
 # GitHub Action Workflow to Deploy Nodejs to AWS ElasticBeanstalk
-#
-# Version Date Info
-# 1.0 2023 Initial Version
-#
 # Made by Rajeev Singh Jadon
-#---------------------------------------------------------------------
 name: CI-CD-Pipeline-to-AWS-ElasticBeanstalk
 env:
   SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
