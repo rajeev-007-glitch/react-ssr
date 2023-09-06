@@ -38,8 +38,16 @@ jobs:
         with:
           status: ${{ job.status }}
           steps: ${{ toJson(steps) }}
-          channel: "#git_action_notification"
-          slack-message: Integration {{ env.GITHUB_REF_NAME }} branch Successfully
+        env:
+          SLACK_CHANNEL: ci-cd
+          SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
+          SLACK_ICON: https://github.com/rtCamp.png?size=48
+          SLACK_MESSAGE: Integration {{ env.GITHUB_REF_NAME }} branch Successfully
+          SLACK_TITLE: Post Title
+          SLACK_USERNAME: pipeline
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+         # channel: "#ci-cd"
+         # message: Integration {{ env.GITHUB_REF_NAME }} branch Successfully
         if: always()
 
   my_cd_pipeline:
@@ -71,6 +79,6 @@ jobs:
         with:
           status: ${{ job.status }}
           steps: ${{ toJson(steps) }}
-          channel: "#git_action_notification"
-          slack-message: Deployed {{ env.GITHUB_REF_NAME }} branch Successfully
+          channel: "#ci-cd"
+          message: Deployed {{ env.GITHUB_REF_NAME }} branch Successfully
         if: always()
